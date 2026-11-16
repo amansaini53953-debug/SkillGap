@@ -2,7 +2,7 @@ from fastapi import FastAPI
 
 from . import models
 from .database import Base, engine
-from .routers import skills, users
+from .routers import careers,skills, users
 
 
 Base.metadata.create_all(bind=engine)
@@ -15,7 +15,7 @@ app = FastAPI(
 
 app.include_router(users.router)
 app.include_router(skills.router)
-
+app.include_router(careers.router)
 
 @app.get("/", tags=["Home"])
 def home():
