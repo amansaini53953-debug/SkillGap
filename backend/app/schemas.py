@@ -132,3 +132,13 @@ class LearningRoadmapResponse(BaseModel):
     career_name: str
 
     roadmap: list[LearningRoadmapItem]
+
+class DashboardResponse(BaseModel):
+    user_name: str
+    total_skills: int
+    available_careers: int
+
+    top_career: str | None
+    career_match: int | None
+
+    next_learning_action: str | None
